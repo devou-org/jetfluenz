@@ -190,7 +190,7 @@ export default function Home() {
       <div style={{background: 'linear-gradient(180deg, #1F07BA 0%, #0E0354 41%, #0E0354 84%)'}}>
 
       {/* Hero Section */}
-      <section id="home" className="relative py-20 px-6 min-h-screen flex items-center overflow-hidden">
+      <section id="home" className="relative py-16 md:py-20 px-4 md:px-6 min-h-screen flex items-center overflow-hidden">
         {/* Decorative Lines */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
           {/* Top line - full width */}
@@ -208,25 +208,25 @@ export default function Home() {
               </div>
 
         <div className="container mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-7xl md:text-8xl font-bold text-white mb-6 leading-tight animate-fade-in-left">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-4 md:mb-6 leading-tight animate-fade-in-left">
                 Jetfluenz
               </h1>
-              <p className="text-xl text-white/80 mb-8 max-w-lg leading-relaxed animate-fade-in-left" style={{animationDelay: '0.2s', opacity: 0}}>
+              <p className="text-lg sm:text-xl text-white/80 mb-6 md:mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed animate-fade-in-left" style={{animationDelay: '0.2s', opacity: 0}}>
                 connects <span className="text-yellow-300 font-semibold">micro-influencers</span> with <span className="text-blue-300 font-semibold">businesses</span> to create <span className="text-green-300 font-semibold">authentic campaigns</span> that <span className="text-pink-300 font-semibold">convert</span>.
               </p>
               <button 
                 onClick={() => setIsWaitlistModalOpen(true)}
-                className="bg-white text-gray-800 px-8 py-4 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg animate-fade-in-up relative overflow-hidden group border-2 border-transparent hover:border-white/30" style={{animationDelay: '0.4s', opacity: 0}}>
+                className="bg-white text-gray-800 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg animate-fade-in-up relative overflow-hidden group border-2 border-transparent hover:border-white/30" style={{animationDelay: '0.4s', opacity: 0}}>
                 <span className="relative z-10">Join waitlist</span>
-                <div className="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-blue-400 transition-all duration-500 animate-border-travel"></div>
+                <div className="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-orange-400 transition-all duration-500 animate-border-travel"></div>
               </button>
             </div>
             
-            <div className="relative h-96 flex items-center justify-center">
+            <div className="relative h-80 sm:h-96 flex items-center justify-center mt-8 lg:mt-0">
               {/* 2x2 Grid Layout */}
-              <div className="grid grid-cols-2 grid-rows-2 gap-4 w-full h-full max-w-lg">
+              <div className="grid grid-cols-2 grid-rows-2 gap-3 sm:gap-4 w-full h-full max-w-sm sm:max-w-lg">
                 {/* First image - spans 2 rows (left column) */}
                 <div className="row-span-2">
                   <img
@@ -278,8 +278,8 @@ export default function Home() {
                 <div className="p-3 md:p-4">
                   <div className="relative h-64 md:h-80">
                     <img 
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=400&fit=crop" 
-                      alt="Business professional working" 
+                      src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&h=400&fit=crop&auto=format" 
+                      alt="Corporate skyscrapers and high-rise buildings" 
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
@@ -303,8 +303,8 @@ export default function Home() {
                 <div className="p-3 md:p-4">
                   <div className="relative h-64 md:h-80">
                     <img 
-                      src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=500&h=400&fit=crop" 
-                      alt="Startup workspace with laptops" 
+                      src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=400&fit=crop&auto=format" 
+                      alt="Startup team brainstorming" 
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
@@ -328,8 +328,8 @@ export default function Home() {
                 <div className="p-3 md:p-4">
                   <div className="relative h-64 md:h-80">
                     <img 
-                      src="https://images.unsplash.com/photo-1493612276216-ee3925520721?w=500&h=400&fit=crop" 
-                      alt="Influencer creating content" 
+                      src="https://images.unsplash.com/photo-1611605698335-8b1569810432?w=500&h=400&fit=crop&auto=format" 
+                      alt="Content creator filming with smartphone" 
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
@@ -770,7 +770,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-white/20 mt-8 pt-6 text-center text-white/60">
-            <p>&copy; 2024 Jetfluenz. All rights reserved.</p>
+            <p>&copy; 2025 Jetfluenz. All rights reserved.</p>
             <p className="text-sm mt-2">
               Developed by{' '}
               <a 

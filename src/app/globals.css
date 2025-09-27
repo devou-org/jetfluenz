@@ -261,19 +261,19 @@
 /* Minimal Border Travel Animation */
 @keyframes borderTravel {
   0% {
-    border-image: linear-gradient(90deg, transparent 0%, rgba(96, 165, 250, 0.6) 50%, transparent 100%) 1;
+    border-image: linear-gradient(90deg, transparent 0%, rgba(255, 165, 0, 0.8) 50%, transparent 100%) 1;
   }
   25% {
-    border-image: linear-gradient(180deg, transparent 0%, rgba(96, 165, 250, 0.6) 50%, transparent 100%) 1;
+    border-image: linear-gradient(180deg, transparent 0%, rgba(255, 165, 0, 0.8) 50%, transparent 100%) 1;
   }
   50% {
-    border-image: linear-gradient(270deg, transparent 0%, rgba(96, 165, 250, 0.6) 50%, transparent 100%) 1;
+    border-image: linear-gradient(270deg, transparent 0%, rgba(255, 165, 0, 0.8) 50%, transparent 100%) 1;
   }
   75% {
-    border-image: linear-gradient(0deg, transparent 0%, rgba(96, 165, 250, 0.6) 50%, transparent 100%) 1;
+    border-image: linear-gradient(0deg, transparent 0%, rgba(255, 165, 0, 0.8) 50%, transparent 100%) 1;
   }
   100% {
-    border-image: linear-gradient(90deg, transparent 0%, rgba(96, 165, 250, 0.6) 50%, transparent 100%) 1;
+    border-image: linear-gradient(90deg, transparent 0%, rgba(255, 165, 0, 0.8) 50%, transparent 100%) 1;
   }
 }
 

@@ -6,6 +6,14 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Jetfluenz - Connect Micro-Influencers with Businesses',
   description: 'A platform connecting micro-influencers (<10K followers) with businesses and startups for marketing campaigns.',
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
+  manifest: '/manifest.json',
+  themeColor: '#1F07BA',
+  viewport: 'width=device-width, initial-scale=1',
 }
 
 export default function RootLayout({ children }) {

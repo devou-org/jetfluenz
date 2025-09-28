@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import WaitlistModal from '../components/WaitlistModal'
+import { Analytics } from "@vercel/analytics/next"
 
 export default function Home() {
   const [isNavbarVisible, setIsNavbarVisible] = useState(true)
@@ -170,7 +171,7 @@ export default function Home() {
                     setIsWaitlistModalOpen(true);
                   }}
                 >
-                  Join Waitlist
+                  Join the Waitlist
                 </button>
               </div>
             </div>
@@ -830,6 +831,9 @@ export default function Home() {
         isOpen={isWaitlistModalOpen} 
         onClose={() => setIsWaitlistModalOpen(false)} 
       />
+      
+      {/* Vercel Analytics */}
+      <Analytics />
     </div>
   )
 }

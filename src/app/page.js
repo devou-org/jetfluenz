@@ -220,7 +220,7 @@ export default function Home() {
               <button 
                 onClick={() => setIsWaitlistModalOpen(true)}
                 className="bg-white text-gray-800 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 shadow-lg animate-fade-in-up relative overflow-hidden group border-2 border-transparent hover:border-white/30" style={{animationDelay: '0.4s', opacity: 0}}>
-                <span className="relative z-10">Join waitlist</span>
+                <span className="relative z-10">Join the waitlist</span>
                 <div className="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-orange-400 transition-all duration-500 animate-border-travel"></div>
               </button>
             </div>

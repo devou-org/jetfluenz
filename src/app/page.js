@@ -284,7 +284,7 @@ export default function Home() {
                       className="w-full h-full object-cover"
                       style={{filter: 'sepia(0.2) saturate(0.8) hue-rotate(-10deg)'}}
                     />
-                    <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+                    <div className="absolute inset-0 bg-black/50"></div>
                     <div className="absolute top-4 md:top-6 left-4 md:left-6">
                       <h3 className="text-xl md:text-2xl font-bold text-white drop-shadow-lg">Business</h3>
                     </div>
@@ -310,7 +310,7 @@ export default function Home() {
                       className="w-full h-full object-cover"
                       style={{filter: 'sepia(0.2) saturate(0.8) hue-rotate(-10deg)'}}
                     />
-                    <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+                    <div className="absolute inset-0 bg-black/50"></div>
                     <div className="absolute top-4 md:top-6 left-4 md:left-6">
                       <h3 className="text-xl md:text-2xl font-bold text-white drop-shadow-lg">Startups</h3>
                     </div>
@@ -336,7 +336,7 @@ export default function Home() {
                       className="w-full h-full object-cover"
                       style={{filter: 'sepia(0.2) saturate(0.8) hue-rotate(-10deg)'}}
                     />
-                    <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+                    <div className="absolute inset-0 bg-black/50"></div>
                     <div className="absolute top-4 md:top-6 left-4 md:left-6">
                       <h3 className="text-xl md:text-2xl font-bold text-white drop-shadow-lg">Micro-Influencers</h3>
                     </div>
@@ -369,7 +369,7 @@ export default function Home() {
           <div className="flex-1 md:h-3/4 grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
             
             {/* What We Do Card - Mobile: full width, Desktop: left column */}
-            <div className="bg-white p-6 md:p-8 h-auto md:h-full flex flex-col justify-center min-h-[250px] md:min-h-[300px] solution-animate scroll-hidden">
+            <div className="bg-white p-6 md:p-8 h-auto md:h-full flex flex-col justify-center min-h-[250px] md:min-h-[300px] solution-animate scroll-hidden rounded-lg">
               <div className="mb-4 md:mb-6">
                 <div className="w-12 h-12 md:w-16 md:h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4 md:mb-6">
                   <svg className="w-6 h-6 md:w-8 md:h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
@@ -387,16 +387,16 @@ export default function Home() {
             <div className="lg:col-span-2 grid grid-cols-2 gap-4 md:gap-8 h-auto md:h-full">
               
               {/* Top Left Card - Connect */}
-              <div className="bg-white p-4 md:p-6 flex flex-col justify-between h-auto md:h-full min-h-[120px] md:min-h-[150px] solution-animate scroll-hidden">
+              <div className="bg-white p-4 md:p-6 flex flex-col justify-between h-auto md:h-full min-h-[120px] md:min-h-[150px] solution-animate scroll-hidden rounded-lg">
                 <div className="flex flex-col items-start">
                   <div className="w-8 h-8 md:w-12 md:h-12 bg-purple-100 rounded-full flex items-center justify-center mb-2 md:mb-4">
                     <svg className="w-4 h-4 md:w-6 md:h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
                     </svg>
-                  </div>
-                  <h4 className="text-black font-bold text-xs md:text-base mb-1 md:mb-2"><span className="text-purple-600">Connect</span> Businesses</h4>
-                  <h4 className="text-black font-bold text-xs md:text-base mb-1 md:mb-2">& <span className="text-blue-600">Startups</span> with</h4>
-                  <h4 className="text-black font-bold text-xs md:text-base"><span className="text-green-600">Micro-Influencers</span></h4>
+                </div>
+                <h4 className="text-black font-bold text-xs md:text-base mb-1 md:mb-2"><span className="text-purple-600">Connect</span> Businesses</h4>
+                <h4 className="text-black font-bold text-xs md:text-base mb-1 md:mb-2">& <span className="text-blue-600">Startups</span> with</h4>
+                <h4 className="text-black font-bold text-xs md:text-base"><span className="text-green-600">Micro-Influencers</span></h4>
                 </div>
                 <div className="flex justify-center items-center mt-4">
                   <img 
@@ -408,7 +408,7 @@ export default function Home() {
               </div>
               
               {/* Top Right Card - Smart Matching */}
-              <div className="bg-white p-4 md:p-6 flex flex-col justify-between h-auto md:h-full min-h-[120px] md:min-h-[150px] solution-animate scroll-hidden">
+              <div className="bg-white p-4 md:p-6 flex flex-col justify-between h-auto md:h-full min-h-[120px] md:min-h-[150px] solution-animate scroll-hidden rounded-lg">
                 <div className="flex flex-col items-start">
                   <div className="w-8 h-8 md:w-12 md:h-12 bg-green-100 rounded-full flex items-center justify-center mb-2 md:mb-4">
                     <svg className="w-4 h-4 md:w-6 md:h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
@@ -428,7 +428,7 @@ export default function Home() {
               </div>
               
               {/* Bottom Left Card - Launch Campaigns */}
-              <div className="bg-white p-4 md:p-6 flex flex-col justify-between h-auto md:h-full min-h-[120px] md:min-h-[150px] solution-animate scroll-hidden">
+              <div className="bg-white p-4 md:p-6 flex flex-col justify-between h-auto md:h-full min-h-[120px] md:min-h-[150px] solution-animate scroll-hidden rounded-lg">
                 <div className="flex flex-col items-start">
                   <div className="w-8 h-8 md:w-12 md:h-12 bg-orange-100 rounded-full flex items-center justify-center mb-2 md:mb-4">
                     <svg className="w-4 h-4 md:w-6 md:h-6 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
@@ -448,7 +448,7 @@ export default function Home() {
               </div>
               
               {/* Bottom Right Card - Track & Grow */}
-              <div className="bg-white p-4 md:p-6 flex flex-col justify-between h-auto md:h-full min-h-[120px] md:min-h-[150px] solution-animate scroll-hidden">
+              <div className="bg-white p-4 md:p-6 flex flex-col justify-between h-auto md:h-full min-h-[120px] md:min-h-[150px] solution-animate scroll-hidden rounded-lg">
                 <div className="flex flex-col items-start">
                   <div className="w-8 h-8 md:w-12 md:h-12 bg-blue-100 rounded-full flex items-center justify-center mb-2 md:mb-4">
                     <svg className="w-4 h-4 md:w-6 md:h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
@@ -805,7 +805,7 @@ export default function Home() {
                   <a href="mailto:info@devou.in" className="text-white/80 hover:text-white transition-colors">
                     info@devou.in
                   </a>
-                </div>
+              </div>
               </div>
             </div>
           </div>

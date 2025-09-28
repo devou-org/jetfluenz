@@ -108,7 +108,7 @@ export default function Home() {
               <button 
                 onClick={() => setIsWaitlistModalOpen(true)}
                 className="bg-white/20 text-white px-4 py-2 rounded-full hover:bg-white/30 transition-colors text-sm">
-                Join Waitlist
+                Join the Waitlist
               </button>
             </div>
 
@@ -281,6 +281,7 @@ export default function Home() {
                       src="/business.png" 
                       alt="Business professionals" 
                       className="w-full h-full object-cover"
+                      style={{filter: 'sepia(0.2) saturate(0.8) hue-rotate(-10deg)'}}
                     />
                     <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
                     <div className="absolute top-4 md:top-6 left-4 md:left-6">
@@ -306,6 +307,7 @@ export default function Home() {
                       src="/startups.png" 
                       alt="Startup team" 
                       className="w-full h-full object-cover"
+                      style={{filter: 'sepia(0.2) saturate(0.8) hue-rotate(-10deg)'}}
                     />
                     <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
                     <div className="absolute top-4 md:top-6 left-4 md:left-6">
@@ -331,6 +333,7 @@ export default function Home() {
                       src="/infulencers.png" 
                       alt="Micro-influencers creating content" 
                       className="w-full h-full object-cover"
+                      style={{filter: 'sepia(0.2) saturate(0.8) hue-rotate(-10deg)'}}
                     />
                     <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
                     <div className="absolute top-4 md:top-6 left-4 md:left-6">

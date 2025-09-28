@@ -54,11 +54,12 @@ export default function AdminWaitlist() {
 
   const exportToCSV = () => {
     const csvContent = [
-      ['Name', 'Email', 'Phone', 'Role', 'Status', 'Submitted At'],
+      ['Name', 'Email', 'Phone', 'Instagram', 'Role', 'Status', 'Submitted At'],
       ...users.map(user => [
         user.name || 'N/A',
         user.email || 'N/A',
         user.phone || 'N/A',
+        user.instagram || 'N/A',
         user.role,
         user.status,
         user.submittedAt || 'N/A'
@@ -186,6 +187,9 @@ export default function AdminWaitlist() {
                       Phone
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Instagram
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Role
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -207,6 +211,18 @@ export default function AdminWaitlist() {
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                         {user.phone || 'N/A'}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        {user.instagram ? (
+                          <a 
+                            href={user.instagram.startsWith('http') ? user.instagram : `https://instagram.com/${user.instagram.replace('@', '')}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 underline"
+                          >
+                            {user.instagram}
+                          </a>
+                        ) : 'N/A'}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${

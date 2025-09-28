@@ -7,6 +7,7 @@ export default function WaitlistModal({ isOpen, onClose }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [instagram, setInstagram] = useState('');
   const [role, setRole] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -24,13 +25,14 @@ export default function WaitlistModal({ isOpen, onClose }) {
     setError('');
 
     try {
-      const result = await addToWaitlist(name, email, phone, role);
+      const result = await addToWaitlist(name, email, phone, instagram, role);
       
       if (result.success) {
         setIsSuccess(true);
         setName('');
         setEmail('');
         setPhone('');
+        setInstagram('');
         setRole('');
         // Auto close after 2 seconds
         setTimeout(() => {
@@ -51,6 +53,7 @@ export default function WaitlistModal({ isOpen, onClose }) {
     setName('');
     setEmail('');
     setPhone('');
+    setInstagram('');
     setRole('');
     setError('');
     setIsSuccess(false);
@@ -137,6 +140,21 @@ export default function WaitlistModal({ isOpen, onClose }) {
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
                   placeholder="+91 98765 43210"
                   required
+                />
+              </div>
+
+              {/* Instagram Input */}
+              <div>
+                <label htmlFor="instagram" className="block text-sm font-medium text-gray-700 mb-2">
+                  Instagram Profile
+                </label>
+                <input
+                  type="text"
+                  id="instagram"
+                  value={instagram}
+                  onChange={(e) => setInstagram(e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+                  placeholder="@username or instagram.com/username"
                 />
               </div>
 

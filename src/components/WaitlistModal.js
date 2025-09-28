@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { addToWaitlist } from '../lib/waitlist';
 
 export default function WaitlistModal({ isOpen, onClose }) {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [role, setRole] = useState('');
@@ -15,7 +16,7 @@ export default function WaitlistModal({ isOpen, onClose }) {
     e.preventDefault();
     
     if (!email || !phone || !role) {
-      setError('Please fill in all fields');
+      setError('Please fill in email, phone number and role');
       return;
     }
 
@@ -23,10 +24,11 @@ export default function WaitlistModal({ isOpen, onClose }) {
     setError('');
 
     try {
-      const result = await addToWaitlist(email, phone, role);
+      const result = await addToWaitlist(name, email, phone, role);
       
       if (result.success) {
         setIsSuccess(true);
+        setName('');
         setEmail('');
         setPhone('');
         setRole('');
@@ -46,6 +48,7 @@ export default function WaitlistModal({ isOpen, onClose }) {
   };
 
   const handleClose = () => {
+    setName('');
     setEmail('');
     setPhone('');
     setRole('');
@@ -90,6 +93,21 @@ export default function WaitlistModal({ isOpen, onClose }) {
 
             {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Name Input */}
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+                  placeholder="Your full name"
+                />
+              </div>
+
               {/* Email Input */}
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">

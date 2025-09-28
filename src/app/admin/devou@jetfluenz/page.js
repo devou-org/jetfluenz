@@ -54,9 +54,10 @@ export default function AdminWaitlist() {
 
   const exportToCSV = () => {
     const csvContent = [
-      ['Email', 'Phone', 'Role', 'Status', 'Submitted At'],
+      ['Name', 'Email', 'Phone', 'Role', 'Status', 'Submitted At'],
       ...users.map(user => [
-        user.email,
+        user.name || 'N/A',
+        user.email || 'N/A',
         user.phone || 'N/A',
         user.role,
         user.status,
@@ -176,6 +177,9 @@ export default function AdminWaitlist() {
                 <thead className="bg-gray-50">
                   <tr>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Name
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Email
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -196,7 +200,10 @@ export default function AdminWaitlist() {
                   {users.map((user) => (
                     <tr key={user.id} className="hover:bg-gray-50">
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {user.email}
+                        {user.name || 'N/A'}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        {user.email || 'N/A'}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                         {user.phone || 'N/A'}

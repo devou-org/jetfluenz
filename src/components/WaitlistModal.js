@@ -5,6 +5,7 @@ import { addToWaitlist } from '../lib/waitlist';
 
 export default function WaitlistModal({ isOpen, onClose }) {
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [role, setRole] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -13,7 +14,7 @@ export default function WaitlistModal({ isOpen, onClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (!email || !role) {
+    if (!email || !phone || !role) {
       setError('Please fill in all fields');
       return;
     }
@@ -22,11 +23,12 @@ export default function WaitlistModal({ isOpen, onClose }) {
     setError('');
 
     try {
-      const result = await addToWaitlist(email, role);
+      const result = await addToWaitlist(email, phone, role);
       
       if (result.success) {
         setIsSuccess(true);
         setEmail('');
+        setPhone('');
         setRole('');
         // Auto close after 2 seconds
         setTimeout(() => {
@@ -45,6 +47,7 @@ export default function WaitlistModal({ isOpen, onClose }) {
 
   const handleClose = () => {
     setEmail('');
+    setPhone('');
     setRole('');
     setError('');
     setIsSuccess(false);
@@ -99,6 +102,22 @@ export default function WaitlistModal({ isOpen, onClose }) {
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="your@email.com"
+                  required
+                />
+              </div>
+
+              {/* Phone Input */}
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="+91 98765 43210"
                   required
                 />
               </div>

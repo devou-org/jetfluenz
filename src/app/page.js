@@ -270,16 +270,16 @@ export default function Home() {
           <h2 className="text-3xl md:text-5xl font-black text-white mb-12 md:mb-20 for-whom-animate for-whom-title scroll-hidden text-center md:text-left">For Whom?</h2>
           
           {/* Card container with connected borders */}
-          <div className="relative border-t border-b border-white/20">
+          <div className="relative border-t border-b border-white/20 rounded-lg overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
               
               {/* Business Card */}
               <div className="relative for-whom-animate for-whom-card-1 scroll-hidden border-b md:border-b-0 border-white/20 md:border-r md:border-r-white/20">
                 <div className="p-3 md:p-4">
-                  <div className="relative h-64 md:h-80">
+                  <div className="relative h-64 md:h-80 rounded-lg overflow-hidden">
                     <img 
-                      src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&h=400&fit=crop&auto=format" 
-                      alt="Corporate skyscrapers and high-rise buildings" 
+                      src="/business.png" 
+                      alt="Business professionals" 
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
@@ -301,10 +301,10 @@ export default function Home() {
               {/* Startups Card */}
               <div className="relative for-whom-animate for-whom-card-2 scroll-hidden border-b md:border-b-0 border-white/20 md:border-r md:border-r-white/20">
                 <div className="p-3 md:p-4">
-                  <div className="relative h-64 md:h-80">
+                  <div className="relative h-64 md:h-80 rounded-lg overflow-hidden">
                     <img 
-                      src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=400&fit=crop&auto=format" 
-                      alt="Startup team brainstorming" 
+                      src="/startups.png" 
+                      alt="Startup team" 
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
@@ -326,10 +326,10 @@ export default function Home() {
               {/* Micro-Influencers Card */}
               <div className="relative for-whom-animate for-whom-card-3 scroll-hidden">
                 <div className="p-3 md:p-4">
-                  <div className="relative h-64 md:h-80">
+                  <div className="relative h-64 md:h-80 rounded-lg overflow-hidden">
                     <img 
-                      src="https://images.unsplash.com/photo-1611605698335-8b1569810432?w=500&h=400&fit=crop&auto=format" 
-                      alt="Content creator filming with smartphone" 
+                      src="/infulencers.png" 
+                      alt="Micro-influencers creating content" 
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
@@ -357,7 +357,7 @@ export default function Home() {
         <div className="container mx-auto min-h-screen flex flex-col px-4 md:px-8">
           
           {/* Header Section - Left aligned */}
-          <div className="h-auto md:h-1/4 flex items-center justify-center md:justify-start mb-8 md:mb-0">
+          <div className="h-auto md:h-1/4 flex items-center justify-center md:justify-start mb-12 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-black text-white solution-animate scroll-hidden text-center md:text-left">Our Solution</h2>
           </div>
           
@@ -383,57 +383,85 @@ export default function Home() {
             <div className="lg:col-span-2 grid grid-cols-2 gap-4 md:gap-8 h-auto md:h-full">
               
               {/* Top Left Card - Connect */}
-              <div className="bg-white p-4 md:p-6 flex flex-col justify-center h-auto md:h-full min-h-[120px] md:min-h-[150px] solution-animate scroll-hidden">
-                <div className="mb-2 md:mb-4">
+              <div className="bg-white p-4 md:p-6 flex flex-col justify-between h-auto md:h-full min-h-[120px] md:min-h-[150px] solution-animate scroll-hidden">
+                <div className="flex flex-col items-start">
                   <div className="w-8 h-8 md:w-12 md:h-12 bg-purple-100 rounded-full flex items-center justify-center mb-2 md:mb-4">
                     <svg className="w-4 h-4 md:w-6 md:h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
                     </svg>
                   </div>
+                  <h4 className="text-black font-bold text-xs md:text-base mb-1 md:mb-2"><span className="text-purple-600">Connect</span> Businesses</h4>
+                  <h4 className="text-black font-bold text-xs md:text-base mb-1 md:mb-2">& <span className="text-blue-600">Startups</span> with</h4>
+                  <h4 className="text-black font-bold text-xs md:text-base"><span className="text-green-600">Micro-Influencers</span></h4>
                 </div>
-                <h4 className="text-black font-bold text-xs md:text-base mb-1 md:mb-2"><span className="text-purple-600">Connect</span> Businesses</h4>
-                <h4 className="text-black font-bold text-xs md:text-base mb-1 md:mb-2">& <span className="text-blue-600">Startups</span> with</h4>
-                <h4 className="text-black font-bold text-xs md:text-base"><span className="text-green-600">Micro-Influencers</span></h4>
+                <div className="flex justify-center items-center mt-4">
+                  <img 
+                    src="/connectwithinfluencers.png" 
+                    alt="Connect with influencers illustration" 
+                    className="w-full h-28 md:h-40 object-contain"
+                  />
+                </div>
               </div>
               
               {/* Top Right Card - Smart Matching */}
-              <div className="bg-white p-4 md:p-6 flex flex-col justify-center h-auto md:h-full min-h-[120px] md:min-h-[150px] solution-animate scroll-hidden">
-                <div className="mb-2 md:mb-4">
+              <div className="bg-white p-4 md:p-6 flex flex-col justify-between h-auto md:h-full min-h-[120px] md:min-h-[150px] solution-animate scroll-hidden">
+                <div className="flex flex-col items-start">
                   <div className="w-8 h-8 md:w-12 md:h-12 bg-green-100 rounded-full flex items-center justify-center mb-2 md:mb-4">
                     <svg className="w-4 h-4 md:w-6 md:h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                     </svg>
                   </div>
+                  <h4 className="text-black font-bold text-xs md:text-base mb-1 md:mb-2"><span className="text-green-600">Smart</span> Campaign</h4>
+                  <h4 className="text-black font-bold text-xs md:text-base"><span className="text-orange-600">Matching</span></h4>
                 </div>
-                <h4 className="text-black font-bold text-xs md:text-base mb-1 md:mb-2"><span className="text-green-600">Smart</span> Campaign</h4>
-                <h4 className="text-black font-bold text-xs md:text-base"><span className="text-orange-600">Matching</span></h4>
+                <div className="flex justify-center items-center mt-4">
+                  <img 
+                    src="/smartcampaign.png" 
+                    alt="Smart campaign matching illustration" 
+                    className="w-full h-28 md:h-40 object-contain"
+                  />
+                </div>
               </div>
               
               {/* Bottom Left Card - Launch Campaigns */}
-              <div className="bg-white p-4 md:p-6 flex flex-col justify-center h-auto md:h-full min-h-[120px] md:min-h-[150px] solution-animate scroll-hidden">
-                <div className="mb-2 md:mb-4">
+              <div className="bg-white p-4 md:p-6 flex flex-col justify-between h-auto md:h-full min-h-[120px] md:min-h-[150px] solution-animate scroll-hidden">
+                <div className="flex flex-col items-start">
                   <div className="w-8 h-8 md:w-12 md:h-12 bg-orange-100 rounded-full flex items-center justify-center mb-2 md:mb-4">
                     <svg className="w-4 h-4 md:w-6 md:h-6 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/>
                     </svg>
                   </div>
+                  <h4 className="text-black font-bold text-xs md:text-base mb-1 md:mb-2"><span className="text-orange-600">Launch</span> Impactful</h4>
+                  <h4 className="text-black font-bold text-xs md:text-base"><span className="text-red-600">Campaigns</span></h4>
                 </div>
-                <h4 className="text-black font-bold text-xs md:text-base mb-1 md:mb-2"><span className="text-orange-600">Launch</span> Impactful</h4>
-                <h4 className="text-black font-bold text-xs md:text-base"><span className="text-red-600">Campaigns</span></h4>
+                <div className="flex justify-center items-center mt-4">
+                  <img 
+                    src="/launchcampaign.jpg" 
+                    alt="Launch campaign illustration" 
+                    className="w-full h-28 md:h-40 object-contain"
+                  />
+                </div>
               </div>
               
               {/* Bottom Right Card - Track & Grow */}
-              <div className="bg-white p-4 md:p-6 flex flex-col justify-center h-auto md:h-full min-h-[120px] md:min-h-[150px] solution-animate scroll-hidden">
-                <div className="mb-2 md:mb-4">
+              <div className="bg-white p-4 md:p-6 flex flex-col justify-between h-auto md:h-full min-h-[120px] md:min-h-[150px] solution-animate scroll-hidden">
+                <div className="flex flex-col items-start">
                   <div className="w-8 h-8 md:w-12 md:h-12 bg-blue-100 rounded-full flex items-center justify-center mb-2 md:mb-4">
                     <svg className="w-4 h-4 md:w-6 md:h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"/>
                       <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"/>
                     </svg>
                   </div>
+                  <h4 className="text-black font-bold text-xs md:text-base mb-1 md:mb-2"><span className="text-blue-600">Track</span></h4>
+                  <h4 className="text-black font-bold text-xs md:text-base">& <span className="text-teal-600">Grow</span></h4>
                 </div>
-                <h4 className="text-black font-bold text-xs md:text-base mb-1 md:mb-2"><span className="text-blue-600">Track</span></h4>
-                <h4 className="text-black font-bold text-xs md:text-base">& <span className="text-teal-600">Grow</span></h4>
+                <div className="flex justify-center items-center mt-4">
+                  <img 
+                    src="/trackandgrow.jpg" 
+                    alt="Track and grow illustration" 
+                    className="w-full h-28 md:h-40 object-contain"
+                  />
+                </div>
               </div>
               
             </div>
@@ -639,13 +667,13 @@ export default function Home() {
                   }
                 }}
               >
-                <h3 className="text-xl font-semibold text-gray-800">What is Jetfluence?</h3>
+                <h3 className="text-xl font-semibold text-gray-800">What is Jetfluenz?</h3>
                 <svg id="icon-1" className="w-6 h-6 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               <div id="faq-1" className="px-6 pb-6" style={{display: 'none'}}>
-                <p className="text-gray-600">Jetfluence is a platform that connects micro-influencers (under 10K followers) with businesses and startups to run authentic and affordable marketing campaigns.</p>
+                <p className="text-gray-600">Jetfluenz is a platform that connects micro-influencers (under 10K followers) with businesses and startups to run authentic and affordable marketing campaigns.</p>
               </div>
             </div>
 
@@ -664,7 +692,7 @@ export default function Home() {
                   }
                 }}
               >
-                <h3 className="text-xl font-semibold text-gray-800">Who can join Jetfluence?</h3>
+                <h3 className="text-xl font-semibold text-gray-800">Who can join Jetfluenz?</h3>
                 <svg id="icon-2" className="w-6 h-6 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -740,7 +768,7 @@ export default function Home() {
                   }
                 }}
               >
-                <h3 className="text-xl font-semibold text-gray-800">Is Jetfluence free to use?</h3>
+                <h3 className="text-xl font-semibold text-gray-800">Is Jetfluenz free to use?</h3>
                 <svg id="icon-5" className="w-6 h-6 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -764,8 +792,16 @@ export default function Home() {
               <p className="text-white/70">Connecting micro-influencers with businesses</p>
             </div>
             <div className="text-center md:text-right">
-              <div className="text-white/70 text-sm">
+              <div className="text-white/70 text-sm space-y-2">
                 <p>Coming Soon - Join the Waitlist</p>
+                <div className="flex flex-col space-y-1">
+                  <a href="tel:+919061555512" className="text-white/80 hover:text-white transition-colors">
+                    +91 90615 55512
+                  </a>
+                  <a href="mailto:info@devou.in" className="text-white/80 hover:text-white transition-colors">
+                    info@devou.in
+                  </a>
+                </div>
               </div>
             </div>
           </div>

@@ -2,15 +2,22 @@ import { collection, addDoc, getDocs, orderBy, query, serverTimestamp } from 'fi
 import { db } from './firebase';
 
 // Add user to waitlist
-export const addToWaitlist = async (email, role) => {
+export const addToWaitlist = async (email, role, instagramUrl = '') => {
   try {
-    const docRef = await addDoc(collection(db, 'users'), {
+    const userData = {
       email: email,
       role: role, // 'influencer' or 'business'
       status: 'waitlist',
       createdAt: serverTimestamp(),
       submittedAt: new Date().toISOString()
-    });
+    };
+
+    // Only add Instagram URL if provided and user is an influencer
+    if (instagramUrl && role === 'influencer') {
+      userData.instagram = instagramUrl;
+    }
+
+    const docRef = await addDoc(collection(db, 'users'), userData);
     
     return { success: true, id: docRef.id };
   } catch (error) {

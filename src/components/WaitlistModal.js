@@ -6,6 +6,7 @@ import { addToWaitlist } from '../lib/waitlist';
 export default function WaitlistModal({ isOpen, onClose }) {
   const [email, setEmail] = useState('');
   const [role, setRole] = useState('');
+  const [instagramUrl, setInstagramUrl] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
@@ -22,12 +23,13 @@ export default function WaitlistModal({ isOpen, onClose }) {
     setError('');
 
     try {
-      const result = await addToWaitlist(email, role);
+      const result = await addToWaitlist(email, role, instagramUrl);
       
       if (result.success) {
         setIsSuccess(true);
         setEmail('');
         setRole('');
+        setInstagramUrl('');
         // Auto close after 2 seconds
         setTimeout(() => {
           setIsSuccess(false);
@@ -46,6 +48,7 @@ export default function WaitlistModal({ isOpen, onClose }) {
   const handleClose = () => {
     setEmail('');
     setRole('');
+    setInstagramUrl('');
     setError('');
     setIsSuccess(false);
     onClose();
@@ -120,6 +123,23 @@ export default function WaitlistModal({ isOpen, onClose }) {
                   <option value="business">Business/Startup</option>
                 </select>
               </div>
+
+              {/* Instagram URL Input - Show only for influencers */}
+              {role === 'influencer' && (
+                <div>
+                  <label htmlFor="instagram" className="block text-sm font-medium text-gray-700 mb-2">
+                    Instagram Profile URL
+                  </label>
+                  <input
+                    type="url"
+                    id="instagram"
+                    value={instagramUrl}
+                    onChange={(e) => setInstagramUrl(e.target.value)}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+                    placeholder="https://instagram.com/yourusername"
+                  />
+                </div>
+              )}
 
               {/* Error Message */}
               {error && (

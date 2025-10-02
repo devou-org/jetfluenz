@@ -22,7 +22,7 @@ export const metadata = {
     'connect micro influencers with businesses',
     'micro influencer campaigns',
     'affordable influencer marketing',
-    'influencer marketing for startups',
+    'influencer marketing for startups ',
     'influencer marketing for small business',
     'nano influencer marketing',
     'creator collaboration platform',

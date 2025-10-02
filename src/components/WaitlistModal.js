@@ -4,10 +4,7 @@ import { useState } from 'react';
 import { addToWaitlist } from '../lib/waitlist';
 
 export default function WaitlistModal({ isOpen, onClose }) {
-  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [instagram, setInstagram] = useState('');
   const [role, setRole] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -16,8 +13,8 @@ export default function WaitlistModal({ isOpen, onClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (!email || !phone || !role) {
-      setError('Please fill in email, phone number and role');
+    if (!email || !role) {
+      setError('Please fill in email and role');
       return;
     }
 
@@ -25,14 +22,11 @@ export default function WaitlistModal({ isOpen, onClose }) {
     setError('');
 
     try {
-      const result = await addToWaitlist(name, email, phone, instagram, role);
+      const result = await addToWaitlist(email, role);
       
       if (result.success) {
         setIsSuccess(true);
-        setName('');
         setEmail('');
-        setPhone('');
-        setInstagram('');
         setRole('');
         // Auto close after 2 seconds
         setTimeout(() => {
@@ -50,10 +44,7 @@ export default function WaitlistModal({ isOpen, onClose }) {
   };
 
   const handleClose = () => {
-    setName('');
     setEmail('');
-    setPhone('');
-    setInstagram('');
     setRole('');
     setError('');
     setIsSuccess(false);
@@ -96,21 +87,6 @@ export default function WaitlistModal({ isOpen, onClose }) {
 
             {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Name Input */}
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
-                  placeholder="Your full name"
-                />
-              </div>
-
               {/* Email Input */}
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
@@ -124,37 +100,6 @@ export default function WaitlistModal({ isOpen, onClose }) {
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
                   placeholder="your@email.com"
                   required
-                />
-              </div>
-
-              {/* Phone Input */}
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
-                  placeholder="+91 98765 43210"
-                  required
-                />
-              </div>
-
-              {/* Instagram Input */}
-              <div>
-                <label htmlFor="instagram" className="block text-sm font-medium text-gray-700 mb-2">
-                  Instagram Profile
-                </label>
-                <input
-                  type="text"
-                  id="instagram"
-                  value={instagram}
-                  onChange={(e) => setInstagram(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
-                  placeholder="@username or instagram.com/username"
                 />
               </div>
 

@@ -2,13 +2,10 @@ import { collection, addDoc, getDocs, orderBy, query, serverTimestamp } from 'fi
 import { db } from './firebase';
 
 // Add user to waitlist
-export const addToWaitlist = async (name, email, phone, instagram, role) => {
+export const addToWaitlist = async (email, role) => {
   try {
     const docRef = await addDoc(collection(db, 'users'), {
-      name: name,
       email: email,
-      phone: phone,
-      instagram: instagram,
       role: role, // 'influencer' or 'business'
       status: 'waitlist',
       createdAt: serverTimestamp(),

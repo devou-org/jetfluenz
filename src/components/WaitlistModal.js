@@ -7,6 +7,7 @@ export default function WaitlistModal({ isOpen, onClose }) {
   const [email, setEmail] = useState('');
   const [role, setRole] = useState('');
   const [instagramUrl, setInstagramUrl] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
@@ -23,13 +24,14 @@ export default function WaitlistModal({ isOpen, onClose }) {
     setError('');
 
     try {
-      const result = await addToWaitlist(email, role, instagramUrl);
+      const result = await addToWaitlist(email, role, instagramUrl, phoneNumber);
       
       if (result.success) {
         setIsSuccess(true);
         setEmail('');
         setRole('');
         setInstagramUrl('');
+        setPhoneNumber('');
         // Auto close after 2 seconds
         setTimeout(() => {
           setIsSuccess(false);
@@ -49,6 +51,7 @@ export default function WaitlistModal({ isOpen, onClose }) {
     setEmail('');
     setRole('');
     setInstagramUrl('');
+    setPhoneNumber('');
     setError('');
     setIsSuccess(false);
     onClose();
@@ -137,6 +140,23 @@ export default function WaitlistModal({ isOpen, onClose }) {
                     onChange={(e) => setInstagramUrl(e.target.value)}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
                     placeholder="https://instagram.com/yourusername"
+                  />
+                </div>
+              )}
+
+              {/* Phone Number Input - Show only for businesses */}
+              {role === 'business' && (
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    Phone Number 
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+                    placeholder="+1 (555) 123-4567"
                   />
                 </div>
               )}
